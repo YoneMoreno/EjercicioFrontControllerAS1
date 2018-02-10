@@ -38,7 +38,7 @@ and open the template in the editor.
                 <input type="hidden" name="command" value="CourseInfoCommand">
                 <input type="submit" value="Crear curso">
             </form>
-            <form action="Cuestionario.jsp">
+            <form action="FrontServlet">
                 <h2>
                     Pregunta 1:
                 </h2>
@@ -68,6 +68,7 @@ and open the template in the editor.
                 <h4>
                     ¿Es correcta?:
                 </h4>
+                <input type="hidden" name="command" value="CuestionarioCommand"/>
                 <input type="checkbox" name="respuestaVerdad13" value="cierta" />
             </form>
             <form action="Encuesta.jsp">
