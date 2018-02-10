@@ -30,7 +30,7 @@
                 <h4>9</h4><input type="radio" name="encuesta1" value="9" />
                 <h4>10</h4><input type="radio" name="encuesta1" value="10"  />
             </div>
-            <input type="submit" name="Enviar encuesta" value="Enviar encuesta" />
+            <input type="reset" name="Enviar encuesta" value="Enviar encuesta" />
         </form>
 
     </body>
