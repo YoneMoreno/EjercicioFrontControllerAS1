@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-            out.print("El recurso no se ha encontrado");
+            out.print("El recurso no se ha encontrado 😖");
         %>
     </body>
 </html>

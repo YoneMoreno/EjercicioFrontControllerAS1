@@ -56,7 +56,7 @@ public class FrontServlet extends HttpServlet {
         try {
             result = Class.forName(command);
         } catch (ClassNotFoundException e) {
-            result = Class.forName("UnknownCommand");
+            result = UnknownCommand.class;
         }
         return result;
     }
