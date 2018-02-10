@@ -83,11 +83,7 @@ public class CourseInfoCommand extends FrontCommand {
         String asignatura = request.getParameter("asignatura");
         String duracion = request.getParameter("duracion");
         String video = request.getParameter("video");
-        request.setAttribute("courseInfo", "el curso es: " + titulo
-                + " , autor: " + autor
-                + " , la asignatura: " + asignatura
-                + " , la duracion en horas es: " + duracion
-                + " , el enlace al video es: " + video);
+
         try {
             forward("/CourseInfo.jsp");
         } catch (ServletException ex) {
