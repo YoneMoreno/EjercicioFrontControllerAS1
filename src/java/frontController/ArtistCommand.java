@@ -21,7 +21,9 @@ public class ArtistCommand extends FrontCommand {
     public void process(HttpServletRequest request) {
         try {
             String titulo = request.getParameter("titulo");
-            request.setAttribute("mensaje", "el curso es: " + titulo);
+            String autor = request.getParameter("autor");
+            request.setAttribute("mensaje", "el curso es: " + titulo
+                    + " , autor: " + autor);
             forward("/Artist");
         } catch (ServletException ex) {
             Logger.getLogger(ArtistCommand.class.getName()).log(Level.SEVERE, null, ex);

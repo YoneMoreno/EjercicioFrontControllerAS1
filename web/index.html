@@ -13,7 +13,8 @@ and open the template in the editor.
     <body>
         <div>
             <form action="FrontServlet">
-                Titulo:<input type="text" name="titulo"/>
+                Titulo:<input type="text" name="titulo" required/>
+                Autor:<input type="text" name="autor" required/>
                 <input type="hidden" name="command" value="ArtistCommand">
                 <input type="submit">
             </form>
