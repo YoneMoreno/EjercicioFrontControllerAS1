@@ -6,7 +6,6 @@
 package org;
 
 import frontController.FrontCommand;
-import frontController.UnknownCommand;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "FrontServlet", urlPatterns = {"/FrontServlet"})
 public class FrontServlet extends HttpServlet {
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -35,43 +33,39 @@ public class FrontServlet extends HttpServlet {
         }
     }
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         processRequest(request, response);
     }
-    
-    private FrontCommand getCommand(HttpServletRequest req) throws Exception{
-        try{
-        FrontCommand f=(FrontCommand) getCommandClass(req).newInstance();
-        return f;
-        }catch (Exception e){
+
+    private FrontCommand getCommand(HttpServletRequest req) throws Exception {
+        try {
+            FrontCommand f = (FrontCommand) getCommandClass(req).newInstance();
+            return f;
+        } catch (Exception e) {
             throw new Exception(e);
         }
-        
+
     }
-    
-    private Class getCommandClass(HttpServletRequest req){
+
+    private Class getCommandClass(HttpServletRequest req) {
         Class result;
         final String command = "frontController." + (String) req.getParameter("command");
-        try{
+        try {
             result = Class.forName(command);
-        }
-        catch(ClassNotFoundException e){
-            result = UnknownCommand.class;
+        } catch (ClassNotFoundException e) {
+            result = Class.forName("UnknownCommand");
         }
         return result;
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
 
     @Override
     public String getServletInfo() {

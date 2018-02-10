@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org;
+package frontController;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Usuario
+ * @author YonePC
  */
-@WebServlet(name = "Unknown", urlPatterns = {"/Unknown"})
-public class Unknown extends HttpServlet {
+@WebServlet(name = "EncuestaCommand", urlPatterns = {"/EncuestaCommand"})
+public class EncuestaCommand extends FrontCommand {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +34,7 @@ public class Unknown extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Unknown</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Unknown at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -84,5 +75,18 @@ public class Unknown extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    public void process(HttpServletRequest request) {
+        String cuestion1 = request.getParameter("cuestion1");
+        request.setAttribute("encuesta", cuestion1);
+        try {
+            forward("/Encuesta.jsp");
+        } catch (ServletException ex) {
+            Logger.getLogger(EncuestaCommand.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EncuestaCommand.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

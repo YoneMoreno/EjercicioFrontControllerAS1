@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package frontController;
+package org;
 
+import frontController.FrontCommand;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,12 +21,12 @@ public class UnknownCommand extends FrontCommand {
     @Override
     public void process(HttpServletRequest request) {
         try {
-            forward("/Unknown");
+            forward("/Unknown.jsp");
         } catch (ServletException ex) {
             Logger.getLogger(UnknownCommand.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(UnknownCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

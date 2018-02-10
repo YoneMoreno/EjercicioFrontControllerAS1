@@ -12,8 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% String cuestion1 = request.getParameter("cuestion1");
-            out.print("La cuestion de la encuesta es: " + cuestion1);
+        <%
+            out.print(request.getAttribute("encuesta"));
         %>
     </body>
 </html>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Encuesta
-    Created on : 10-feb-2018, 10:06:01
+    Document   : Unknown
+    Created on : 10-feb-2018, 10:49:11
     Author     : YonePC
 --%>
 
@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-            out.print(request.getAttribute("encuesta"));
+            out.print("El recurso no se ha encontrado");
         %>
     </body>
 </html>
