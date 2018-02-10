@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <form action="CourseInfo.jsp">
+            <form action="FrontServlet">
                 <h2 style="font-weight: 700">Titulo:</h2>
                 <input style="width:100%" type="text" name="titulo" required/>
                 <h2 style="font-weight: 700">Autor:</h2>
@@ -35,7 +35,7 @@ and open the template in the editor.
                 <h2 style="font-weight:700">Enlace al curso en video:</h2>
                 <input style="width:100%" type="url" name="video" pattern="https?://.+" title="video">
 
-                <input type="hidden" name="command" value="ArtistCommand">
+                <input type="hidden" name="command" value="CourseInfoCommand">
                 <input type="submit" value="Crear curso">
             </form>
             <form action="Cuestionario.jsp">
