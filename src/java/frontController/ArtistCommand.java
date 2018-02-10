@@ -20,8 +20,8 @@ public class ArtistCommand extends FrontCommand {
     @Override
     public void process(HttpServletRequest request) {
         try {
-            String nombre = request.getParameter("nombre");
-            request.setAttribute("mensaje", "tu eres: " + nombre);
+            String titulo = request.getParameter("titulo");
+            request.setAttribute("mensaje", "el curso es: " + titulo);
             forward("/Artist");
         } catch (ServletException ex) {
             Logger.getLogger(ArtistCommand.class.getName()).log(Level.SEVERE, null, ex);
@@ -29,5 +29,5 @@ public class ArtistCommand extends FrontCommand {
             Logger.getLogger(ArtistCommand.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
