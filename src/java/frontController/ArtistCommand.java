@@ -23,9 +23,11 @@ public class ArtistCommand extends FrontCommand {
             String titulo = request.getParameter("titulo");
             String autor = request.getParameter("autor");
             String asignatura = request.getParameter("asignatura");
+            String duracion = request.getParameter("duracion");
             request.setAttribute("mensaje", "el curso es: " + titulo
                     + " , autor: " + autor
-                    + " , la asignatura: " + asignatura);
+                    + " , la asignatura: " + asignatura
+                    + " , la duracion en horas es: " + duracion);
             forward("/Artist");
         } catch (ServletException ex) {
             Logger.getLogger(ArtistCommand.class.getName()).log(Level.SEVERE, null, ex);

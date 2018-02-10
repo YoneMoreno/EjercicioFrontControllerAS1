@@ -15,7 +15,7 @@ and open the template in the editor.
             <form action="FrontServlet">
                 Titulo:<input type="text" name="titulo" required/>
                 Autor:<input type="text" name="autor" required/>
-                <select name="asignatura">
+                Asignatura:<select name="asignatura">
                     <option>Matematicas</option>
                     <option>Ingles</option>
                     <option>Lengua</option>
@@ -27,6 +27,8 @@ and open the template in the editor.
                     <option>Frances</option>
                     <option>Chino</option>
                 </select>
+                Duracion (en horas):<input type="number" name="duracion"/>
+                
                 
                 <input type="hidden" name="command" value="ArtistCommand">
                 <input type="submit">
